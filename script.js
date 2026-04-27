@@ -5,7 +5,7 @@ let imageList = [
     },
     {
         src: "img/neroPalaceSide.jpg",
-        title: "Nero Palast Side"
+        title: "Nero Palast Seite"
     },
     {
         src: "img/place.jpg",
