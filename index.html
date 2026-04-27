@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotogram</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" aria-label="Zur Startseite">
+                <img class="logo" src="img/logo.png" alt="Fotogram Logo">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <h1>Your personal album</h1>
+
+        <section id="fotoGalery" class="fotoGalery" aria-label="Fotogalerie">
+
+            <button class="imageButton" onclick="openImage(0)" aria-label="Bild öffnen: Nero Palast Tor">
+                <img src="img/neroPalaceTor.jpg" alt="Nero Palast Tor">
+            </button>
+
+            <button class="imageButton" onclick="openImage(1)" aria-label="Bild öffnen: Nero Palast Seite">
+                <img src="img/neroPalaceSide.jpg" alt="Nero Palast Seite">
+            </button>
+
+            <button class="imageButton" onclick="openImage(2)" aria-label="Bild öffnen: Place de Roma">
+                <img src="img/place.jpg" alt="Place de Roma">
+            </button>
+
+            <button class="imageButton" onclick="openImage(3)" aria-label="Bild öffnen: Hinterhof">
+                <img src="img/hinterhof.jpg" alt="Hinterhof">
+            </button>
+
+            <button class="imageButton" onclick="openImage(4)" aria-label="Bild öffnen: Nero Palast Nord">
+                <img src="img/neroPalace4.jpg" alt="Nero Palast Nord">
+            </button>
+
+            <button class="imageButton" onclick="openImage(5)" aria-label="Bild öffnen: Nero Palast Gräber">
+                <img src="img/neroPalace.jpg" alt="Nero Palast Gräber">
+            </button>
+
+            <button class="imageButton" onclick="openImage(6)" aria-label="Bild öffnen: Nero Palast große Säulen">
+                <img src="img/neroPalace2.jpg" alt="Nero Palast große Säulen">
+            </button>
+
+            <button class="imageButton" onclick="openImage(7)" aria-label="Bild öffnen: Nero Palast Steine">
+                <img src="img/neroPalace3.jpg" alt="Nero Palast Steine">
+            </button>
+
+            <button class="imageButton" onclick="openImage(8)" aria-label="Bild öffnen: Altes Haus in Rom">
+                <img src="img/oldHouse.jpg" alt="Altes Haus in Rom">
+            </button>
+
+            <button class="imageButton" onclick="openImage(9)" aria-label="Bild öffnen: Palast Rom">
+                <img src="img/Palace.jpg" alt="Palast Rom">
+            </button>
+
+            <button class="imageButton" onclick="openImage(10)" aria-label="Bild öffnen: Spanische Treppe">
+                <img src="img/spanischeTreppe.jpg" alt="Spanische Treppe">
+            </button>
+
+            <button class="imageButton" onclick="openImage(11)" aria-label="Bild öffnen: Kirche">
+                <img src="img/church.jpg" alt="Kirche">
+            </button>
+
+        </section>
+    </main>
+
+    <dialog id="imageDialog" onclick="closeOnBackground(event)">
+        <div class="dialogContent" onclick="event.stopPropagation()">
+            
+            <div class="dialogHeader">
+                <h2 id="dialogTitle">Bildtitel</h2>
+                <button class="closeBtn" onclick="closeDialog()" aria-label="Dialog schließen">×</button>
+            </div>
+
+            <div class="dialogImageWrapper">
+                <img id="dialogImage" src="" alt="">
+            </div>
+
+            <div class="dialogFooter">
+                <button class="navBtn" onclick="showPreviousImage()" aria-label="Vorheriges Bild">
+                    <img class="arrow" src="img/white-arrow-left-105px.png" alt="">
+                </button>
+
+                <p id="imageCounter">1/12</p>
+
+                <button class="navBtn" onclick="showNextImage()" aria-label="Nächstes Bild">
+                    <img class="arrow" src="img/white-arrow-right-105px.png" alt="">
+                </button>
+            </div>
+        </div>
+    </dialog>
+
+    <footer>
+        <div class="footerContent">
+            <p>© 2026 Fotogram</p>
+             <a href="index.html" aria-label="Zur Startseite">
+                <img class="logo" src="img/logo.png" alt="Fotogram Logo">
+            </a>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
