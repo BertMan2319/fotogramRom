@@ -53,7 +53,7 @@ const IMAGE_LIST = [
 /** This variable stores which image is currently displayed in the dialog. "0" because arrays start at "0" and not at "1". */
 let currentImageIndex = 0;
 
-/**wird über onclick=openImage aufgerufen. Der angeklickte Button/Bild übergibt eine Zahl(als aktuell ausgewähltes Bild).*/
+/** Called via onclick="openImage(...)". The clicked button/image passes a number (the currently selected image index). */
 function openImage(index) {
     currentImageIndex = index;
     updateDialog();/**aktualisiert Bild, Titeel und den alt-Text und den Zähler im Dialog*/
