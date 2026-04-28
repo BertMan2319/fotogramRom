@@ -1,5 +1,5 @@
 /**ARRAY mit Bildern mit je zwei Eigenschaften*/
-const imageList = [
+const IMAGE_LIST = [
     {
         src: "img/neroPalaceTor.jpg",
         title: "Nero Palast Tor"
@@ -61,16 +61,16 @@ function openImage(index) {
 }
 
 function updateDialog() {/**function sorgt dafür, dass der Dialog immer den Inhalt des aktuell ausgewählten Bildes zeigt*/
-    document.getElementById("dialogImage").src = imageList[currentImageIndex].src;/**setzt das Bild in den Dialog*/
-    document.getElementById("dialogImage").alt = imageList[currentImageIndex].title;/**dialogImage.alt setzt den Alt-Text passend zum Bildtitel*/
-    document.getElementById("dialogTitle").innerText = imageList[currentImageIndex].title;/**dialogTitle.innerText setzt die Überschrift */
-    document.getElementById("imageCounter").innerText = (currentImageIndex + 1) + "/" + imageList.length;/**imageCounter.innerText erstellt den Zähler (z.B. 1/12)*/
+    document.getElementById("dialogImage").src = IMAGE_LIST[currentImageIndex].src;/**setzt das Bild in den Dialog*/
+    document.getElementById("dialogImage").alt = IMAGE_LIST[currentImageIndex].title;/**dialogImage.alt setzt den Alt-Text passend zum Bildtitel*/
+    document.getElementById("dialogTitle").innerText = IMAGE_LIST[currentImageIndex].title;/**dialogTitle.innerText setzt die Überschrift */
+    document.getElementById("imageCounter").innerText = (currentImageIndex + 1) + "/" + IMAGE_LIST.length;/**imageCounter.innerText erstellt den Zähler (z.B. 1/12)*/
 }
 
 function showNextImage() {/**Diese Funktion wird bei klick auf den rechten Pfeil im Dialog aufgerufen*/
     currentImageIndex++;/**Erhöht den Index um 1*/
 
-    if (currentImageIndex >= imageList.length) {/**wenn Index>=der Anzahl der Bilder, dann wird er wieder auf 0 gesetzt.*/
+    if (currentImageIndex >= IMAGE_LIST.length) {/**wenn Index>=der Anzahl der Bilder, dann wird er wieder auf 0 gesetzt.*/
         currentImageIndex = 0;
     }
 
@@ -81,7 +81,7 @@ function showPreviousImage() {/**siehe function showNextImage() nur andersherum*
     currentImageIndex--;
 
     if (currentImageIndex < 0) {
-        currentImageIndex = imageList.length - 1;
+        currentImageIndex = IMAGE_LIST.length - 1;
     }
 
     updateDialog();
