@@ -37,7 +37,7 @@ const IMAGE_LIST = [
         title: "Altes Haus in Rom"
     },
     {
-        src: "img/Palace.jpg",
+        src: "img/palace.jpg",
         title: "Palast Rom"
     },
     {
