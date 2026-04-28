@@ -11,6 +11,10 @@ body {
     flex-direction: column;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 /* HEADER */
 header {
     background-color: #09222a;
@@ -244,12 +248,12 @@ footer {
     }
 
     .dialogContent {
-        width: 310px;
+        width: 280px;
         min-height: 200px;
     }
 
     .dialogHeader h2 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .dialogHeader button {
