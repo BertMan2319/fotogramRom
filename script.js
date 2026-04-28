@@ -1,4 +1,4 @@
-/**ARRAY mit Bildern mit je zwei Eigenschaften*/
+/**ARRAY with images, each having two properties*/
 const IMAGE_LIST = [
     {
         src: "img/neroPalaceTor.jpg",
@@ -50,7 +50,7 @@ const IMAGE_LIST = [
     }
 ];
 
-/**Diese Variable merkt sich, welches Bild aktuell im Dialog angezeigt wird. "0", weil Array ab "0" zählt und nicht ab "1" */
+/** This variable stores which image is currently displayed in the dialog. "0" because arrays start at "0" and not at "1". */
 let currentImageIndex = 0;
 
 /**wird über onclick=openImage aufgerufen. Der angeklickte Button/Bild übergibt eine Zahl(als aktuell ausgewähltes Bild).*/
