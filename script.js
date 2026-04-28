@@ -54,10 +54,12 @@ const IMAGE_LIST = [
 let currentImageIndex = 0;
 
 /** Called via onclick="openImage(...)". The clicked button/image passes a number (the currently selected image index). */
+/** updateDialog: /** Updates the image, title, alt text, and the counter in the dialog */
+/** showModal() opens the dialog element as a modal window */
 function openImage(index) {
     currentImageIndex = index;
-    updateDialog();/**aktualisiert Bild, Titeel und den alt-Text und den Zähler im Dialog*/
-    document.getElementById("imageDialog").showModal();/**showModal öffnet das Dialog-Element als modales Fenster*/
+    updateDialog();
+    document.getElementById("imageDialog").showModal();/
     document.body.classList.add("no-scroll");
 }
 
