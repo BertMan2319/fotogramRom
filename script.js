@@ -58,6 +58,7 @@ function openImage(index) {
     currentImageIndex = index;
     updateDialog();/**aktualisiert Bild, Titeel und den alt-Text und den Zähler im Dialog*/
     document.getElementById("imageDialog").showModal();/**showModal öffnet das Dialog-Element als modales Fenster*/
+    document.body.classList.add("no-scroll");
 }
 
 function updateDialog() {/**function sorgt dafür, dass der Dialog immer den Inhalt des aktuell ausgewählten Bildes zeigt*/
@@ -89,6 +90,7 @@ function showPreviousImage() {/**siehe function showNextImage() nur andersherum*
 
 function closeDialog() {/**schließt Dialog durch klick auf "x"-Button */
     document.getElementById("imageDialog").close();
+     document.body.classList.remove("no-scroll");
 }
 
 function closeOnBackground(event) {
