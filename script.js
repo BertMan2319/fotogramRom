@@ -50,6 +50,30 @@ const IMAGE_LIST = [
     }
 ];
 
+/* function renderGallery(): Function that dynamically creates the entire image gallery
+const gallery = document.getElementById("fotoGalery"): Retrieves the container from the HTML into which the images are inserted
+gallery.innerHTML = "": Clears the content of the container to prevent duplicate elements
+for (let i = 0; i < IMAGE_LIST.length; i++): Iterates over all elements in the array IMAGE_LIST to create an element for each image
+let i = 0; means the loop starts with the first element of the array (index 0)
+i < IMAGE_LIST.length; means the loop runs until the last element of the array is reached
+i++: Increases the value by 1 in each iteration
+gallery.innerHTML += ...: Adds new HTML code to the container without overwriting the existing content
+<button class="imageButton" onclick="openImage(${i})" aria-label="Open image: ${IMAGE_LIST[i].title}">: Creates a clickable button for each image and passes the corresponding index to the function when clicked
+<img src="${IMAGE_LIST[i].src}" alt="${IMAGE_LIST[i].title}">: Inserts the respective image from the array and sets the appropriate alt text
+*/
+function renderGallery() {
+    const gallery = document.getElementById("fotoGalery");
+     gallery.innerHTML = "";
+
+    for (let i = 0; i < IMAGE_LIST.length; i++) {
+        gallery.innerHTML += `
+            <button class="imageButton" onclick="openImage(${i})" aria-label="Bild öffnen: ${IMAGE_LIST[i].title}">
+                <img src="${IMAGE_LIST[i].src}" alt="${IMAGE_LIST[i].title}">
+            </button>
+        `;
+    }
+}
+
 /** This variable stores which image is currently displayed in the dialog. "0" because arrays start at "0" and not at "1".
 Called via onclick="openImage(...)". The clicked button/image passes a number (the currently selected image index).
 updateDialog: /** Updates the image, title, alt text, and the counter in the dialog
@@ -109,3 +133,6 @@ function closeOnBackground(event) {
         closeDialog();
     }
 }
+
+/*Defines the function. It will be called later and then creates the entire gallery.*/
+renderGallery();
