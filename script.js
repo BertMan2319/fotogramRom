@@ -50,37 +50,46 @@ const IMAGE_LIST = [
     }
 ];
 
-/** This variable stores which image is currently displayed in the dialog. "0" because arrays start at "0" and not at "1". */
-let currentImageIndex = 0;
-
-/** Called via onclick="openImage(...)". The clicked button/image passes a number (the currently selected image index).
+/** This variable stores which image is currently displayed in the dialog. "0" because arrays start at "0" and not at "1".
+Called via onclick="openImage(...)". The clicked button/image passes a number (the currently selected image index).
 updateDialog: /** Updates the image, title, alt text, and the counter in the dialog
 showModal() opens the dialog element as a modal window */
+let currentImageIndex = 0;
+
+
 function openImage(index) {
     currentImageIndex = index;
     updateDialog();
-    document.getElementById("imageDialog").showModal();/
+    document.getElementById("imageDialog").showModal();
     document.body.classList.add("no-scroll");
 }
 
-function updateDialog() {//** This function ensures that the dialog always displays the content of the currently selected image */
-    document.getElementById("dialogImage").src = IMAGE_LIST[currentImageIndex].src;//**.src Sets the image in the dialog */
-    document.getElementById("dialogImage").alt = IMAGE_LIST[currentImageIndex].title;/**dialogImage.alt setzt den Alt-Text passend zum Bildtitel*/
-    document.getElementById("dialogTitle").innerText = IMAGE_LIST[currentImageIndex].title;/**/** dialogImage.alt sets the alt text to match the image title */ */
-    document.getElementById("imageCounter").innerText = (currentImageIndex + 1) + "/" + IMAGE_LIST.length;/**/imageCounter.innerText creates the counter (e.g., 1/12) */*/
+/** This function ensures that the dialog always displays the content of the currently selected image
+ .src Sets the image in the dialog 
+ dialogImage.alt sets the alt text to match the image title
+imageCounter.innerText creates the counter (e.g., 1/12)*/
+function updateDialog() {
+
+    document.getElementById("dialogImage").src = IMAGE_LIST[currentImageIndex].src;
+    document.getElementById("dialogImage").alt = IMAGE_LIST[currentImageIndex].title;
+    document.getElementById("dialogTitle").innerText = IMAGE_LIST[currentImageIndex].title;
+    document.getElementById("imageCounter").innerText = (currentImageIndex + 1) + "/" + IMAGE_LIST.length;
 }
+/*This function is called when clicking the right arrow in the dialog
+currentImageIndex++ increases the index by 1
+If the index is greater than or equal to the number of images, it is reset to 0
+updateDialog() shows the new picture */
+function showNextImage() {
+    currentImageIndex++;
 
-function showNextImage() {/**Diese Funktion wird bei klick auf den rechten Pfeil im Dialog aufgerufen*/
-    currentImageIndex++;/**Erhöht den Index um 1*/
-
-    if (currentImageIndex >= IMAGE_LIST.length) {/**wenn Index>=der Anzahl der Bilder, dann wird er wieder auf 0 gesetzt.*/
+    if (currentImageIndex >= IMAGE_LIST.length) {
         currentImageIndex = 0;
     }
 
-    updateDialog();/**zeigt danach das neue Bild.*/
+    updateDialog();
 }
-
-function showPreviousImage() {/**siehe function showNextImage() nur andersherum*/
+/* see function showNextImage() but vis-versa*/
+function showPreviousImage() {
     currentImageIndex--;
 
     if (currentImageIndex < 0) {
@@ -89,14 +98,14 @@ function showPreviousImage() {/**siehe function showNextImage() nur andersherum*
 
     updateDialog();
 }
-
-function closeDialog() {/**schließt Dialog durch klick auf "x"-Button */
+/*/** Closes the dialog by clicking the "x" button */
+function closeDialog() {
     document.getElementById("imageDialog").close();
      document.body.classList.remove("no-scroll");
 }
-
+/*/** event.target is the element that was actually clicked. If this element's id is "imageDialog", the background was clicked */
 function closeOnBackground(event) {
-    if (event.target.id === "imageDialog") {/**event.target ist das Element, auf das wirklich geklickt wird.Wenn die id dieses Elements imageDialog ist, wurde auf Hintergrund geklickt*/
-        closeDialog();/**dann wird der dialog geschlossen */
+    if (event.target.id === "imageDialog") {
+        closeDialog();
     }
 }
