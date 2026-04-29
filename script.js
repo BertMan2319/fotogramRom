@@ -53,9 +53,9 @@ const IMAGE_LIST = [
 /** This variable stores which image is currently displayed in the dialog. "0" because arrays start at "0" and not at "1". */
 let currentImageIndex = 0;
 
-/** Called via onclick="openImage(...)". The clicked button/image passes a number (the currently selected image index). */
-/** updateDialog: /** Updates the image, title, alt text, and the counter in the dialog */
-/** showModal() opens the dialog element as a modal window */
+/** Called via onclick="openImage(...)". The clicked button/image passes a number (the currently selected image index).
+updateDialog: /** Updates the image, title, alt text, and the counter in the dialog
+showModal() opens the dialog element as a modal window */
 function openImage(index) {
     currentImageIndex = index;
     updateDialog();
@@ -63,11 +63,11 @@ function openImage(index) {
     document.body.classList.add("no-scroll");
 }
 
-function updateDialog() {/**function sorgt dafür, dass der Dialog immer den Inhalt des aktuell ausgewählten Bildes zeigt*/
-    document.getElementById("dialogImage").src = IMAGE_LIST[currentImageIndex].src;/**setzt das Bild in den Dialog*/
+function updateDialog() {//** This function ensures that the dialog always displays the content of the currently selected image */
+    document.getElementById("dialogImage").src = IMAGE_LIST[currentImageIndex].src;//**.src Sets the image in the dialog */
     document.getElementById("dialogImage").alt = IMAGE_LIST[currentImageIndex].title;/**dialogImage.alt setzt den Alt-Text passend zum Bildtitel*/
-    document.getElementById("dialogTitle").innerText = IMAGE_LIST[currentImageIndex].title;/**dialogTitle.innerText setzt die Überschrift */
-    document.getElementById("imageCounter").innerText = (currentImageIndex + 1) + "/" + IMAGE_LIST.length;/**imageCounter.innerText erstellt den Zähler (z.B. 1/12)*/
+    document.getElementById("dialogTitle").innerText = IMAGE_LIST[currentImageIndex].title;/**/** dialogImage.alt sets the alt text to match the image title */ */
+    document.getElementById("imageCounter").innerText = (currentImageIndex + 1) + "/" + IMAGE_LIST.length;/**/imageCounter.innerText creates the counter (e.g., 1/12) */*/
 }
 
 function showNextImage() {/**Diese Funktion wird bei klick auf den rechten Pfeil im Dialog aufgerufen*/
